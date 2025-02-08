@@ -22,36 +22,47 @@ if (!$user) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Delete User - Mid Project BNCC</title>
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Delete User - Mid Project BNCC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">BNCC Admin</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
-        <li class="nav-item"><a class="nav-link" href="../actions/logout_action.php">Logout</a></li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">BNCC Admin</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="../actions/logout_action.php">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Konfirmasi Hapus -->
+  <div class="container mt-5">
+    <div class="card mx-auto" style="max-width: 500px;">
+      <div class="card-body text-center">
+        <h3 class="card-title mb-4">Delete User</h3>
+        <p>Are you sure you want to delete the following user?</p>
+        <ul class="list-group mb-4">
+          <li class="list-group-item"><strong>Full Name:</strong> <?php echo htmlspecialchars($user['first_name'].' '.$user['last_name']); ?></li>
+          <li class="list-group-item"><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></li>
+        </ul>
+        <form action="../actions/delete_action.php" method="POST">
+          <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-danger">Yes, Delete</button>
+            <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</nav>
-<div class="container mt-4">
-    <h2>Delete User</h2>
-    <p>Are you sure you want to delete the following user?</p>
-    <ul>
-        <li>Full Name: <?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?></li>
-        <li>Email: <?php echo htmlspecialchars($user['email']); ?></li>
-    </ul>
-    <form action="../actions/delete_action.php" method="POST">
-        <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-        <button type="submit" class="btn btn-danger">Yes, Delete</button>
-        <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
-    </form>
-</div>
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

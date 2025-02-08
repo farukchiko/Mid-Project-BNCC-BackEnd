@@ -1,4 +1,3 @@
--- Buat database dan tabel users
 CREATE DATABASE IF NOT EXISTS midproject_bncc;
 USE midproject_bncc;
 
@@ -14,4 +13,4 @@ CREATE TABLE IF NOT EXISTS users (
 
 -- Masukkan data admin (password md5 dari 'Admin123')
 INSERT INTO users (id, first_name, last_name, email, password, bio, photo) VALUES
-('A001', 'admin', 'BNCC', 'adminBNCC@gmail.com', MD5('Admin123'), 'Hai, aku Admin yang akan me manajemen web ini', NULL);
+('A001', 'Admin', 'Jago', 'admin123@gmail.com', MD5('Admin123'), 'Hai, aku Admin yang akan me manajemen web ini', NULL);

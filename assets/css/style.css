@@ -1,0 +1,41 @@
+/* assets/css/style.css */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(90deg, #4e73df 0%, #1cc88a 100%);
+  }
+  
+  .card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #fff;
+    padding: 0.5rem 0;
+  }
+  
+ /* Efek hover yang sangat smooth pada baris tabel */
+  .table-hover tbody tr {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .table-hover tbody tr:hover {
+    transform: translateY(-8px) scale(1.02); /* Terangkat dan sedikit membesar */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih halus */
+    cursor: pointer;
+  }
+  
+  
